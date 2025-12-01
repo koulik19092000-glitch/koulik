@@ -509,6 +509,65 @@
       color: #92400e;
     }
 
+    /* Social Icons */
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      justify-content: center;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .social-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .social-icon:hover::before {
+      left: 100%;
+    }
+
+    .social-icon.linkedin {
+      background: linear-gradient(135deg, #0077b5, #005582);
+      color: white;
+    }
+
+    .social-icon.instagram {
+      background: linear-gradient(135deg, #e4405f, #f77737, #8338ec);
+      color: white;
+    }
+
+    .social-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 0;
+      fill: currentColor;
+    }
+
     .footer-note {
       text-align: center;
       font-size: 11px;
@@ -555,7 +614,7 @@
               <span class="highlight">Koulik</span> De Sarkar
             </h1>
             <p class="hero-tagline">
-              Tech enthusiast with a passion for coding, data analysis, and cybersecurity, building a strong base in programming, networking, and problem‑solving for real‑world projects. 
+              Tech enthusiast with a passion for coding, data analysis, and cybersecurity, building a strong base in programming, networking, and problem‑solving for real‑world projects.
             </p>
             <div class="hero-meta">
               <div class="pill">Location · <span>Islampur, India</span></div>
@@ -591,7 +650,6 @@
                   <span class="badge-skill strong">Java</span>
                   <span class="badge-skill strong">C</span>
                   <span class="badge-skill">HTML</span>
-                  <!-- PHP deliberately removed from UI as requested -->
                   <span class="badge-skill">Networking</span>
                   <span class="badge-skill">Ethical Hacking (fundamentals)</span>
                   <span class="badge-skill">Computer Networks</span>
@@ -642,11 +700,11 @@
                 <ul class="bullet-list">
                   <li class="bullet-item">
                     <span class="bullet-item-dot"></span>
-                    <div>Followed oral and written directions accurately in academic and project work. </div>
+                    <div>Followed oral and written directions accurately in academic and project work.</div>
                   </li>
                   <li class="bullet-item">
                     <span class="bullet-item-dot"></span>
-                    <div>Helped people resolve issues using clear, friendly communication with a focus on satisfaction. </div>
+                    <div>Helped people resolve issues using clear, friendly communication with a focus on satisfaction.</div>
                   </li>
                   <li class="bullet-item">
                     <span class="bullet-item-dot"></span>
@@ -705,7 +763,7 @@
                   </li>
                   <li class="bullet-item">
                     <span class="bullet-item-dot"></span>
-                    <div><strong>LinkedIn:</strong> linkedin.com/koulikdesarkar</div>
+                    <div><strong>LinkedIn:</strong> linkedin.com/in/koulikdesarkar</div>
                   </li>
                 </ul>
               </div>
@@ -714,14 +772,14 @@
         </div>
       </section>
 
-      <!-- RIGHT: Profile, languages, hobbies -->
+      <!-- RIGHT: Profile, languages, hobbies + SOCIAL ICONS -->
       <aside class="panel-side">
         <section class="card-profile">
           <div class="profile-top">
             <div class="avatar-wrap">
               <div class="avatar-inner">
                 <!-- Replace with your real image file -->
-                <img src="myphoto.jpeg" alt="Portrait of Koulik De Sarkar" />
+                <img src="myphoto.jpg" alt="Portrait of Koulik De Sarkar" />
               </div>
             </div>
             <div class="profile-meta">
@@ -777,9 +835,6 @@
             </div>
           </div>
 
-          <p class="footer-note">
-            Bright, responsive single‑page portfolio ready for GitHub Pages or any static host.
-          </p>
           <!-- NEW: Social Media Icons -->
           <hr class="divider" />
           <div>
